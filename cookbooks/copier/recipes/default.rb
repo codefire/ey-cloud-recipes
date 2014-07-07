@@ -1,4 +1,4 @@
-if node[:instance_role] =~ /^app/
+if node[:instance_role] =~ /^app/ || node[:instance_role] == 'solo'
   template "/home/deploy/.pgpass" do
     owner 'deploy'
     group 'deploy'

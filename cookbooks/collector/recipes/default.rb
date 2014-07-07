@@ -1,4 +1,4 @@
-if node[:instance_role] =~ /^app/
+if node[:instance_role] =~ /^app/ || node[:instance_role] == 'solo'
   remote_file "/engineyard/bin/collector" do
     source "collector"
     owner "root"
@@ -27,5 +27,4 @@ if node[:instance_role] =~ /^app/
        action :run
     end
   end
-
 end
